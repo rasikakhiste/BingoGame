@@ -21,6 +21,7 @@ public class DefaultStrategyEvaluator implements StrategyEvaluator {
 
     @Override
     public boolean evaluate(Player player, Ticket ticket) {
+
         // Check for a winni ng combination for each unclaimed winning strategy
         for (Map.Entry<WinningStrategy, Boolean> entry : strategyMap.entrySet()) {
             WinningStrategy strategy = entry.getKey();
@@ -46,6 +47,11 @@ public class DefaultStrategyEvaluator implements StrategyEvaluator {
         return false;
     }
 
+    /**
+     * Initialize the strategy map with all strategies when the class loads
+     *
+     * @return
+     */
     private static Map<WinningStrategy, Boolean> initializeStrategyMap() {
         Map<WinningStrategy, Boolean> map = new HashMap<>();
         map.put(new EarlyFiveStrategy(), false);

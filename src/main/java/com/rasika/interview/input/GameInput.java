@@ -1,5 +1,6 @@
 package com.rasika.interview.input;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,6 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class GameInput {
 
     private int range;
@@ -17,12 +19,4 @@ public class GameInput {
     private int rows;
     private int columns;
     private int numbersPerRow;
-
-    public GameInput(int range, int numPlayers, int rows, int columns, int numbersPerRow) {
-        this.range = range;
-        this.numPlayers = numPlayers;
-        this.rows = rows;
-        this.columns = columns;
-        this.numbersPerRow = numbersPerRow;
-    }
 }

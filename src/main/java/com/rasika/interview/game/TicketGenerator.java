@@ -2,6 +2,7 @@ package com.rasika.interview.game;
 
 import com.rasika.interview.entity.Ticket;
 import com.rasika.interview.input.GameInput;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,16 +18,17 @@ import static com.rasika.interview.util.GameHelper.generateListWithinRange;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class TicketGenerator {
 
     private List<Integer> numbers;
     private GameInput gameInput;
 
-    public TicketGenerator(List<Integer> numbers, GameInput gameInput) {
-        this.numbers = numbers;
-        this.gameInput = gameInput;
-    }
-
+    /**
+     * Helper method which calls generate(rows, cols, numsPerRow)
+     *
+     * @return
+     */
     public Ticket generateTicket() {
         return generate(gameInput.getRows(), gameInput.getColumns(),
                 gameInput.getNumbersPerRow());
@@ -35,6 +37,7 @@ public class TicketGenerator {
     /**
      * Generates the ticket with random values
      * and with given constraints
+     *
      * @param rows
      * @param columns
      * @param numbersPerRow

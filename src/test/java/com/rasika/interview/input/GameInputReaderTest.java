@@ -43,18 +43,6 @@ public class GameInputReaderTest {
     }
 
     @Test
-    public void testReadGameInputWithException() throws IOException {
-        when(processor.readNextLine()).thenThrow(new IOException());
-        GameInput input = inputReader.readGameInput();
-
-        assertEquals(-1, input.getRange());
-        assertEquals(-1, input.getRows());
-        assertEquals(-1, input.getColumns());
-        assertEquals(-1, input.getNumPlayers());
-        assertEquals(-1, input.getNumbersPerRow());
-    }
-
-    @Test
     public void testReadGameInputWithDefaultValues() throws IOException {
         when(processor.readNextLine()).thenReturn(null);
         GameInput input = inputReader.readGameInput();

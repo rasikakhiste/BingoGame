@@ -1,18 +1,20 @@
 package com.rasika.interview.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
  * @author Rasika Khiste
  */
-
 @Getter
 @Setter
+@NoArgsConstructor
 public class Ticket {
 
     private int rows;
     private int columns;
+    // TODO: Use HashMap to create ticket
     private Cell[][] cells;
 
     public Ticket(int rows, int columns) {
@@ -22,7 +24,8 @@ public class Ticket {
     }
 
     /**
-     * Adds a value in ticket at given position (row,column)
+     * Adds a value in ticket at given position (row, column)
+     *
      * @param row
      * @param column
      * @param value
@@ -33,7 +36,8 @@ public class Ticket {
     }
 
     /**
-     * Gets a value from ticket for given position (row,column)
+     * Gets a value from ticket for given position (row, column)
+     *
      * @param row
      * @param column
      * @return
@@ -45,6 +49,7 @@ public class Ticket {
 
     /**
      * Marks a value to true if present in ticket
+     *
      * @param value
      * @return
      */
@@ -62,7 +67,7 @@ public class Ticket {
     }
 
     /**
-     * Checks if give value is present in ticket
+     * Checks if given value is present in ticket
      * @param row
      * @param column
      * @return
@@ -72,8 +77,7 @@ public class Ticket {
     }
 
     /**
-     * Returns true if value in ticket is marked,
-     * else false
+     * Returns true if value in ticket is marked
      * @param row
      * @param column
      * @return boolean

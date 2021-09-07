@@ -8,12 +8,15 @@ import java.io.IOException;
 public interface IOProcessor {
     /**
      * Reads a token from IO
+     *
      * @return String token
      * @throws IOException
      */
     String readNext() throws IOException;
+
     /**
      * Reads a line from IO
+     *
      * @return String line
      * @throws IOException
      */
@@ -21,6 +24,7 @@ public interface IOProcessor {
 
     /**
      * Writes a line to IO
+     *
      * @param line
      */
     void writeLine(String line);

@@ -1,6 +1,7 @@
 package com.rasika.interview.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -10,9 +11,9 @@ import java.util.List;
 /**
  * @author Rasika Khiste
  */
-
 @Getter
 @Setter
+@NoArgsConstructor
 @ToString
 public class Player {
 

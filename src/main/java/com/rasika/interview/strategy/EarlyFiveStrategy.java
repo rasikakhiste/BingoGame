@@ -17,10 +17,11 @@ public class EarlyFiveStrategy implements WinningStrategy {
 
     @Override
     public boolean isWinningCombination(Ticket ticket) {
-        int count = 0, rows = ticket.getRows(), columns = ticket.getColumns();
 
-        for(int i = 0; i < rows; i++) {
-            for(int j = 0; j < columns; j++) {
+        int count = 0;
+
+        for(int i = 0; i < ticket.getRows(); i++) {
+            for(int j = 0; j < ticket.getColumns(); j++) {
                if (ticket.isValuePresent(i, j) && ticket.isValueMarked(i, j)) {
                     count++;
                     if(count == EARLY_FIVE_COUNT)

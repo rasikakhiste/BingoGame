@@ -2,7 +2,9 @@ package com.rasika.interview.game;
 
 import com.rasika.interview.strategy.StrategyEvaluator;
 import com.rasika.interview.util.IOProcessor;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -10,15 +12,11 @@ import lombok.Setter;
  */
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class GameOptions {
 
     private IOProcessor processor;
     private TicketGenerator ticketGenerator;
     private StrategyEvaluator strategyEvaluator;
-
-    public GameOptions(IOProcessor processor, TicketGenerator ticketGenerator, StrategyEvaluator strategyEvaluator) {
-        this.processor = processor;
-        this.ticketGenerator = ticketGenerator;
-        this.strategyEvaluator = strategyEvaluator;
-    }
 }

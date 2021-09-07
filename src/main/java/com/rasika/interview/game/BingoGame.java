@@ -7,6 +7,9 @@ import com.rasika.interview.input.GameInput;
 import com.rasika.interview.strategy.StrategyEvaluator;
 import com.rasika.interview.util.IOProcessor;
 import com.rasika.interview.util.Logger;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,6 +22,9 @@ import static com.rasika.interview.util.LogLevel.*;
 /**
  * @author Rasika Khiste
  */
+@Getter
+@Setter
+@NoArgsConstructor
 public class BingoGame implements Game {
 
     private static final String GENERATE_NEXT_NUMBER = "N";
@@ -38,7 +44,6 @@ public class BingoGame implements Game {
         this.ticketGenerator = gameOptions.getTicketGenerator();
         this.strategyEvaluator = gameOptions.getStrategyEvaluator();
         this.players = new ArrayList<>();
-        initialize();
     }
 
     @Override
@@ -70,6 +75,7 @@ public class BingoGame implements Game {
 
     @Override
     public void playGame() {
+
         int index = 0;
         int nextNumber = 0;
 

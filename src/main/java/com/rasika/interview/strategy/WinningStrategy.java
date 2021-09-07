@@ -9,13 +9,14 @@ import com.rasika.interview.entity.WinningCombination;
 public interface WinningStrategy {
     /**
      * Returns the description for winning combination
+     *
      * @return WinningCombination
      */
     WinningCombination getDescription();
 
     /**
-     * Checks for particular winning combination
-     * on give ticket, and returns true if valid
+     * Checks for particular winning combination on give ticket, and returns true if valid
+     *
      * @param ticket
      * @return boolean
      */

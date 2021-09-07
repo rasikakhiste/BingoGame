@@ -16,8 +16,7 @@ import com.rasika.interview.validator.InputValidator;
 
 import java.util.Scanner;
 
-import static com.rasika.interview.util.LogLevel.ERROR;
-import static com.rasika.interview.util.LogLevel.INFO;
+import static com.rasika.interview.util.LogLevel.*;
 
 /**
  * @author Rasika Khiste
@@ -25,10 +24,12 @@ import static com.rasika.interview.util.LogLevel.INFO;
 public class Driver {
 
     public static void main(String[] args) {
+
         IOProcessor processor = new SystemIOProcessor(new Scanner(System.in));
         try {
-            // Define the logger
+
             Logger.setProcessor(processor);
+            Logger.getLogLevels().add(DEBUG);
 
             Logger.log("**** Lets Play Housie *****\n", INFO);
             Logger.log("Note: - Press 'Q' to quit any time.\n", INFO);
@@ -44,11 +45,13 @@ public class Driver {
 
             GameOptions gameOptions = new GameOptions(processor, generator, strategyEvaluator);
             Game game = new BingoGame(gameInput, gameOptions);
+            game.initialize();
 
             game.playGame();
 
             Logger.log("***** Game Over *****\n", INFO);
             game.printSummary();
+
         } catch (Exception e) {
             Logger.log("Exception occurred. Quiting game", ERROR);
         }

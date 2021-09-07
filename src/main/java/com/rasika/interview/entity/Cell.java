@@ -1,15 +1,13 @@
 package com.rasika.interview.entity;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 /**
  * @author Rasika Khiste
  */
-
 @Getter
 @Setter
+@NoArgsConstructor
 @ToString
 public class Cell {
 

@@ -16,6 +16,9 @@ import static com.rasika.interview.util.LogLevel.INFO;
 public class Logger {
 
     private static Logger logger = null;
+
+    @Getter
+    @Setter
     private static Set<LogLevel> logLevels = initializeSet();
 
     @Getter

@@ -1,18 +1,23 @@
 package com.rasika.interview.util;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.IOException;
 import java.util.Scanner;
 
 /**
  * @author Rasika Khiste
  */
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class SystemIOProcessor implements IOProcessor {
 
     private Scanner scanner;
-
-    public SystemIOProcessor(Scanner scanner) {
-        this.scanner = scanner;
-    }
 
     @Override
     public String readNext() throws IOException {

@@ -15,13 +15,11 @@ public class FullHouseStrategy implements WinningStrategy {
 
     @Override
     public boolean isWinningCombination(Ticket ticket) {
-        int rows = ticket.getRows(), columns = ticket.getColumns();
 
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
-                if (ticket.isValuePresent(i, j) && !ticket.isValueMarked(i, j)) {
+        for (int i = 0; i < ticket.getRows(); i++) {
+            for (int j = 0; j < ticket.getColumns(); j++) {
+                if (ticket.isValuePresent(i, j) && !ticket.isValueMarked(i, j))
                     return false;
-                }
             }
         }
         return true;

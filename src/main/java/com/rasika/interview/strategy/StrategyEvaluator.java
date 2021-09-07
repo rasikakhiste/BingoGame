@@ -9,6 +9,7 @@ import com.rasika.interview.entity.Ticket;
 public interface StrategyEvaluator {
     /**
      * Evaluates each winning combination against given ticket
+     *
      * @param player
      * @param ticket
      * @return boolean

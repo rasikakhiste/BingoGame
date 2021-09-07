@@ -15,12 +15,10 @@ public class TopLineStrategy implements WinningStrategy {
 
     @Override
     public boolean isWinningCombination(Ticket ticket) {
-        int columns = ticket.getColumns();
 
-        for (int j = 0; j < columns; j++) {
-            if (ticket.isValuePresent(0, j) && !ticket.isValueMarked(0, j)) {
+        for (int j = 0; j < ticket.getColumns(); j++) {
+            if (ticket.isValuePresent(0, j) && !ticket.isValueMarked(0, j))
                 return false;
-            }
         }
         return true;
     }
